@@ -1,0 +1,6 @@
+CREATE TABLE vehicles (
+    id BIGSERIAL PRIMARY KEY,
+    plate_number VARCHAR(20) NOT NULL UNIQUE,
+    brand VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL
+);
