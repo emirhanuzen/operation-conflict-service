@@ -11,7 +11,7 @@ import com.emirhanuzen.entity.Assignment;
 
 @Mapper(componentModel = "spring")
 public interface IAssignmentMapper {
-
+ 
     @Mapping(target = "driver", ignore = true)
     @Mapping(target = "vehicle", ignore = true)
     @Mapping(target = "task", ignore = true)

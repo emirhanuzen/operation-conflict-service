@@ -1,6 +1,7 @@
 package com.emirhanuzen.mapper;
 
 import org.mapstruct.Mapper;
+
 import org.mapstruct.MappingTarget;
 
 import com.emirhanuzen.dto.task.TaskCreateRequest;
