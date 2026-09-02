@@ -1,6 +1,10 @@
 package com.emirhanuzen.service;
 
+import java.time.LocalDate;
 import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.emirhanuzen.dto.assignment.AssignmentCreateRequest;
 import com.emirhanuzen.dto.assignment.AssignmentResponse;
@@ -17,4 +21,8 @@ public interface IAssignmentService {
     List<AssignmentResponse> getAllAssignments();
 
     void deleteAssignment(Long id);
+    
+    Page<AssignmentResponse> getFilteredAssignments(LocalDate serviceDate, Long driverId, Long vehicleId, Pageable pageable);
+    
+    
 }

@@ -1,10 +1,13 @@
 package com.emirhanuzen.service.impl;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.emirhanuzen.dto.assignment.AssignmentCreateRequest;
@@ -127,6 +130,12 @@ public class AssignmentServiceImpl implements IAssignmentService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public Page<AssignmentResponse> getFilteredAssignments(LocalDate serviceDate, Long driverId, Long vehicleId, Pageable pageable) {
+        Page<Assignment> assignments = assignmentRepository.findWithFilters(serviceDate, driverId, vehicleId, pageable);
+        return assignments.map(assignmentMapper::toResponse);
+    }
+    
     @Override
     public void deleteAssignment(Long id) {
         if (!assignmentRepository.existsById(id)) {
