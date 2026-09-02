@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import jakarta.validation.constraints.NotNull;
 
+import com.emirhanuzen.entity.AssignmentStatus;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,4 +31,7 @@ public class AssignmentUpdateRequest {
 
     @NotNull(message = "Bitiş zamanı boş olamaz")
     private LocalDateTime endTime;
+
+    @NotNull(message = "Durum boş olamaz")
+    private AssignmentStatus status;
 }

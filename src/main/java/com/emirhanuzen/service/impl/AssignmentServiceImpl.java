@@ -110,6 +110,7 @@ public class AssignmentServiceImpl implements IAssignmentService {
         assignment.setVehicle(vehicle);
         assignment.setTask(task);
         assignment.setUpdatedAt(LocalDateTime.now());
+        assignment.setStatus(request.getStatus());
 
         Assignment updated = assignmentRepository.save(assignment);
         return assignmentMapper.toResponse(updated);
