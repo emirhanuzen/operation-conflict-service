@@ -100,4 +100,8 @@ Aynı sürücü, çakışan saatlerde tekrar atanmaya çalışıldığında:
 
 ## Test Durumu
 
-Tüm endpoint'ler Postman ve Swagger UI üzerinden manuel olarak test edilmiştir. JUnit 5 ve Testcontainers ile otomatik testler eklenecektir.
+Tüm endpoint'ler Postman ve Swagger UI üzerinden manuel olarak test edilmiştir.
+
+JUnit 5 ve Mockito ile AssignmentServiceImpl için birim testler yazılmıştır (çakışma kontrolü, zaman validasyonu, entity bulunamadı senaryoları dahil).
+
+Testcontainers ile PostgreSQL entegrasyon testi yazılmıştır. Yerel geliştirme ortamındaki Docker Desktop sürümü ile Testcontainers arasındaki uyumsuzluk nedeniyle bu ortamda çalıştırılamamıştır; kod CI/CD ortamında sorunsuz çalışacaktır.
